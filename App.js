@@ -1,13 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import firebase from 'firebase';
+import Header from './src/components/Header';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,12 +10,25 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component{
+  componentWillMount(){
+    firebase.initializeApp(
+      {
+        apiKey: 'AIzaSyCF1p2fLj_16PiKleWHYXh7WBFL0xv9_0c',
+        authDomain: 'authenticationreactnativ-85f71.firebaseapp.com',
+        databaseURL: 'https://authenticationreactnativ-85f71.firebaseio.com',
+        projectId: 'authenticationreactnativ-85f71',
+        storageBucket: 'authenticationreactnativ-85f71.appspot.com',
+        messagingSenderId: '690092683124'
+      }
+    )
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Login</Text>
+      <View>
+        <Header headerText="Giriş Ekranı" />
+        <Text style={{ marginTop: 5 }}>Login</Text>
       </View>
     );
   }
