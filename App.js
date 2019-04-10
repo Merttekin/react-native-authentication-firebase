@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import firebase from 'firebase';
 import Header from './src/components/Header';
+import LoginForm from './src/LoginForm';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -28,7 +29,7 @@ export default class App extends Component{
     return (
       <View>
         <Header headerText="Giriş Ekranı" />
-        <Text style={{ marginTop: 5 }}>Login</Text>
+        <LoginForm />
       </View>
     );
   }
